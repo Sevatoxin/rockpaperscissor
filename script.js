@@ -50,33 +50,6 @@ playButtons.forEach((button) => {
     button.setAttribute("style", "padding: 2px 6px;");
 });
 
-//Setting up the page for playing
-
-
-// function getPlayerChoice(choice) {
-//     let choice = prompt("Please select rock'r', paper'p' or scissor's'");
-
-//     //Check if player actually inputs one of the game choices. If not, ask again
-//     switch (choice) {
-//         case "r":
-//             playerChoice = choice;
-//             break
-            
-//         case "p":
-//             playerChoice = choice;
-//             break
-            
-//         case "s":
-//             playerChoice = choice;
-//             break
-            
-//         default:
-//             console.log("Please enter (r) for rock, (p) for paper or (s) for scissor.");
-//             getPlayerChoice();
-//     }
-//     return choice
-// }
-
 //Function to create a random integer between 0 and max
 function getRandomInt (max) {
     return Math.floor(Math.random() * max)
@@ -134,20 +107,8 @@ function playRound(playerChoice, computerChoice) {
             playerScore++
         }
     }
+
+    //Update scores
+    playerScoreElement.textContent = `Your Score: ${playerScore}`;
+    computerScoreElement.textContent = `Computer Score: ${computerScore}`;
 }
-
-// function playGame() {
-//     //Welcome player to the game
-//     console.log("Welcome to Rock, Paper, Scissor within your Browser Console.")
-
-//     for (let rounds = 0; rounds < 5; rounds++) {
-//         round = rounds;
-//         round++;
-//         console.log("Round: " + round.toString())
-//         playRound(getPlayerChoice(), getComputerChoice())
-//     }
-
-//     //Finish
-//     console.log("Thanks for playing! You scored: " + playerScore + ". The computer scored: " +
-//     computerScore + ".");
-// }
