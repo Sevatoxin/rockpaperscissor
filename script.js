@@ -10,16 +10,18 @@
 // Reworking the game to be able to be played with buttons.
 // An UI will be added, so the game is not a console game anymore.
 
-//Set the round to 0 at the beginning
-let round = 0;
+//  How to play RPS with UI:
+//The player selects their choice with a button
+//Computer selects randomly
+//A winner is choosen as soon as someone has 5 points
+//Extra rule: a tie gives 0.5 points
+
+//Set the scores to 0 at the beginning
 let playerScore = 0;
 let computerScore = 0;
 
-//Play a whole game of 5 rounds
-
 
 //Start playing the game
-console.log("See if the scripts loop on itself")
 playGame()
 
 function getPlayerChoice() {
