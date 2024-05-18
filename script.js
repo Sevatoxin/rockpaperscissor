@@ -76,11 +76,13 @@ function getComputerChoice () {
 }
 
 function playRound(playerChoice, computerChoice) {
+    //Tie logic
     if (playerChoice == computerChoice) {
         console.log("You tied!")
         playerScore += 0.5;
         computerScore += 0.5;
     }
+    //Non Tie Logic to get who won
     else {
         if (playerChoice == "rock" && computerChoice == "scissor") {
             console.log("You won!")

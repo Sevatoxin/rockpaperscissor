@@ -30,6 +30,7 @@ button {
     border: solid 2px white;
     border-radius: 35px;
     background-color: cornsilk;
+    box-shadow: 4px 6px 10px rgb(0, 0, 0);
     transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
     font-weight: bold;
     font-family: Roboto;
@@ -45,4 +46,5 @@ button:hover {
 
 .score {
     color: cornsilk;
+    text-shadow: 2px 2px 3px black;
 }
