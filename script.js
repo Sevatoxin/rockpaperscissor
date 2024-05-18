@@ -18,13 +18,34 @@
 
 //Set the scores to 0 at the beginning
 let playerScore = 0;
+let playerChoice = "";
 let computerScore = 0;
 let winner = "";
+
+//Storing play buttons
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissor = document.querySelector("#scissor");
+const playButtons = [rock, paper, scissor];
+
+//Add eventListener to each playbutton
+playButtons.forEach(button) {
+    button.addEventListener("click", (e) => {
+        //Saves player choice
+        playerChoice = button.id
+        playRound(playerChoice, getComputerChoice());
+    });
+}
+
+//Add style to each playbutton
+playButtons.forEach(button)  {
+    button.setAttribute("style", "padding: 2px 6px;");
+}
 
 //Setting up the page for playing
 
 
-function getPlayerChoice() {
+function getPlayerChoice(choice) {
     let choice = prompt("Please select rock'r', paper'p' or scissor's'");
 
     //Check if player actually inputs one of the game choices. If not, ask again
@@ -60,13 +81,13 @@ function getComputerChoice () {
 
     switch (choice) {
         case 0:
-            choice = "r";
+            choice = "rock";
             break
         case 1:
-            choice = "p"
+            choice = "paper"
             break
         case 2:
-            choice = "s"
+            choice = "scissor"
             break
     }
 
@@ -78,27 +99,27 @@ function playRound(playerChoice, computerChoice) {
         console.log("You tied!")
     }
     else {
-        if (playerChoice == "r" && computerChoice == "s") {
+        if (playerChoice == "rock" && computerChoice == "scissor") {
             console.log("You won!")
             playerScore++
         }
-        else if (playerChoice == "r" && computerChoice == "p") {
+        else if (playerChoice == "rock" && computerChoice == "paper") {
             console.log("You loose!")
             computerScore++
         }
-        else if (playerChoice == "s" && computerChoice == "r") {
+        else if (playerChoice == "scissor" && computerChoice == "rock") {
             console.log("You loose!")
             computerScore++
         }
-        else if (playerChoice == "s" && computerChoice == "p") {
+        else if (playerChoice == "scissor" && computerChoice == "paper") {
             console.log("You won!")
             playerScore++
         }
-        else if (playerChoice == "p" && computerChoice == "s") {
+        else if (playerChoice == "paper" && computerChoice == "scissor") {
             console.log("You loose!")
             computerScore++
         }
-        else if (playerChoice == "p" && computerChoice == "r") {
+        else if (playerChoice == "paper" && computerChoice == "rock") {
             console.log("You won!")
             playerScore++
         }
