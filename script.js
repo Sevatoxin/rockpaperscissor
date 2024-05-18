@@ -19,7 +19,7 @@ console.log("See if the scripts loop on itself")
 playGame()
 
 function getPlayerChoice() {
-    let choice = prompt("Please select rock´r´, paper´p´ or scissor´s´");
+    let choice = prompt("Please select rock'r', paper'p' or scissor's'");
 
     //Check if player actually inputs one of the game choices. If not, ask again
     switch (choice) {
