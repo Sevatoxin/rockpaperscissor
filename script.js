@@ -19,10 +19,10 @@
 //Set the scores to 0 at the beginning
 let playerScore = 0;
 let computerScore = 0;
+let winner = "";
 
+//Setting up the page for playing
 
-//Start playing the game
-playGame()
 
 function getPlayerChoice() {
     let choice = prompt("Please select rock'r', paper'p' or scissor's'");
@@ -105,18 +105,18 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    //Welcome player to the game
-    console.log("Welcome to Rock, Paper, Scissor within your Browser Console.")
+// function playGame() {
+//     //Welcome player to the game
+//     console.log("Welcome to Rock, Paper, Scissor within your Browser Console.")
 
-    for (let rounds = 0; rounds < 5; rounds++) {
-        round = rounds;
-        round++;
-        console.log("Round: " + round.toString())
-        playRound(getPlayerChoice(), getComputerChoice())
-    }
+//     for (let rounds = 0; rounds < 5; rounds++) {
+//         round = rounds;
+//         round++;
+//         console.log("Round: " + round.toString())
+//         playRound(getPlayerChoice(), getComputerChoice())
+//     }
 
-    //Finish
-    console.log("Thanks for playing! You scored: " + playerScore + ". The computer scored: " +
-    computerScore + ".");
-}
+//     //Finish
+//     console.log("Thanks for playing! You scored: " + playerScore + ". The computer scored: " +
+//     computerScore + ".");
+// }
