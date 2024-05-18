@@ -18,8 +18,8 @@
 
 //Set the scores to 0 at the beginning
 let playerChoice = "";
-let playerScore = 0;
-let computerScore = 0;
+let playerScore = 0.0;
+let computerScore = 0.0;
 let winner = "";
 
 //Storing play buttons
@@ -27,6 +27,13 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissor = document.querySelector("#scissor");
 const playButtons = [rock, paper, scissor];
+
+//Storing score tags
+const playerScoreElement = document.querySelector("#player-score");
+const computerScoreElement = document.querySelector("#computer-score");
+
+playerScoreElement.textContent = `Your Score: ${playerScore}`;
+computerScoreElement.textContent = `Computer Score: ${computerScore}`;
 
 //Add eventListener to each playbutton
 playButtons.forEach((button) => {
@@ -98,6 +105,8 @@ function getComputerChoice () {
 function playRound(playerChoice, computerChoice) {
     if (playerChoice == computerChoice) {
         console.log("You tied!")
+        playerScore += 0.5;
+        computerScore += 0.5;
     }
     else {
         if (playerChoice == "rock" && computerChoice == "scissor") {

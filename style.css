@@ -1,8 +1,12 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(64, 62, 62);
+    font-weight: bold;
+    font-family: Roboto;
+    font-size: 24px;
 }
 
 .container {
@@ -13,6 +17,12 @@ body {
     padding: 2em 1em;
 }
 
+.container.scores {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+
 button {
     width: 6em;
     height: 3em;
@@ -21,6 +31,9 @@ button {
     border-radius: 35px;
     background-color: cornsilk;
     transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    font-weight: bold;
+    font-family: Roboto;
+    font-size: 24px;
 }
 
 button:hover {
@@ -28,4 +41,8 @@ button:hover {
     border-color: yellow;
     background-color: rgb(255, 255, 0, 0.8);
     box-shadow: 0 0 10px yellowgreen;
+}
+
+.score {
+    color: cornsilk;
 }
