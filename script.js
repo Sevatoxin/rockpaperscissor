@@ -6,6 +6,10 @@
 // Both picks need to be compared
 // Result needs to be tracked.
 
+// UI Branch
+// Reworking the game to be able to be played with buttons.
+// An UI will be added, so the game is not a console game anymore.
+
 //Set the round to 0 at the beginning
 let round = 0;
 let playerScore = 0;
