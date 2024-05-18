@@ -17,8 +17,8 @@
 //Extra rule: a tie gives 0.5 points
 
 //Set the scores to 0 at the beginning
-let playerScore = 0;
 let playerChoice = "";
+let playerScore = 0;
 let computerScore = 0;
 let winner = "";
 
@@ -29,45 +29,46 @@ const scissor = document.querySelector("#scissor");
 const playButtons = [rock, paper, scissor];
 
 //Add eventListener to each playbutton
-playButtons.forEach(button) {
+playButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
         //Saves player choice
-        playerChoice = button.id
+        playerChoice = button.id;
         playRound(playerChoice, getComputerChoice());
+        console.log(playerChoice);
     });
-}
+});
 
 //Add style to each playbutton
-playButtons.forEach(button)  {
+playButtons.forEach((button) => {
     button.setAttribute("style", "padding: 2px 6px;");
-}
+});
 
 //Setting up the page for playing
 
 
-function getPlayerChoice(choice) {
-    let choice = prompt("Please select rock'r', paper'p' or scissor's'");
+// function getPlayerChoice(choice) {
+//     let choice = prompt("Please select rock'r', paper'p' or scissor's'");
 
-    //Check if player actually inputs one of the game choices. If not, ask again
-    switch (choice) {
-        case "r":
-            playerChoice = choice;
-            break
+//     //Check if player actually inputs one of the game choices. If not, ask again
+//     switch (choice) {
+//         case "r":
+//             playerChoice = choice;
+//             break
             
-        case "p":
-            playerChoice = choice;
-            break
+//         case "p":
+//             playerChoice = choice;
+//             break
             
-        case "s":
-            playerChoice = choice;
-            break
+//         case "s":
+//             playerChoice = choice;
+//             break
             
-        default:
-            console.log("Please enter (r) for rock, (p) for paper or (s) for scissor.");
-            getPlayerChoice();
-    }
-    return choice
-}
+//         default:
+//             console.log("Please enter (r) for rock, (p) for paper or (s) for scissor.");
+//             getPlayerChoice();
+//     }
+//     return choice
+// }
 
 //Function to create a random integer between 0 and max
 function getRandomInt (max) {
