@@ -118,10 +118,10 @@ function playRound(playerChoice, computerChoice) {
     computerScoreElement.textContent = `Computer Score: ${computerScore}`;
 
     //Game winning logic
-    if (playerScore > 5) {
+    if (playerScore >= 5) {
         winnerElement.textContent = "You got a Score of 5 and WON! Reload the page to start again.";
     };
-    if (computerScore > 5) {
+    if (computerScore >= 5) {
         winnerElement.textContent = "Computer got a Score of 5 and you LOST! Reload the page to start again.";
     };
 }
