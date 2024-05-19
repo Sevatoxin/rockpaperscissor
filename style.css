@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: rgb(64, 62, 62);
     font-weight: bold;
@@ -21,6 +21,18 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: 2em;
+}
+
+.container#main {
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 0;
+}
+
+.container#header {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
 }
 
 button {
@@ -47,4 +59,14 @@ button:hover {
 .score {
     color: cornsilk;
     text-shadow: 2px 2px 3px black;
+}
+
+.winner {
+    color: cornsilk;
+    text-shadow: 2px 2px 3px black;
+}
+
+h1 {
+    color: cornsilk;
+    text-shadow: 4px 4px 5px black;
 }
