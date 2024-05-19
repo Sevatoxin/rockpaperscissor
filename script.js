@@ -32,6 +32,9 @@ const playButtons = [rock, paper, scissor];
 const playerScoreElement = document.querySelector("#player-score");
 const computerScoreElement = document.querySelector("#computer-score");
 
+//Storing Winner Announcement Element
+const winnerElement = document.querySelector(".winner");
+
 playerScoreElement.textContent = `Your Score: ${playerScore}`;
 computerScoreElement.textContent = `Computer Score: ${computerScore}`;
 
@@ -78,34 +81,34 @@ function getComputerChoice () {
 function playRound(playerChoice, computerChoice) {
     //Tie logic
     if (playerChoice == computerChoice) {
-        console.log("You tied!")
+        winnerElement.textContent = `TIE! You choose: ${playerChoice.toUpperCase()}. Computer choose: ${computerChoice.toUpperCase()}.`
         playerScore += 0.5;
         computerScore += 0.5;
     }
     //Non Tie Logic to get who won
     else {
         if (playerChoice == "rock" && computerChoice == "scissor") {
-            console.log("You won!")
+            winnerElement.textContent = `WON! You choose: ${playerChoice.toUpperCase()}. Computer choose: ${computerChoice.toUpperCase()}.`
             playerScore++
         }
         else if (playerChoice == "rock" && computerChoice == "paper") {
-            console.log("You loose!")
+            winnerElement.textContent = `LOST! You choose: ${playerChoice.toUpperCase()}. Computer choose: ${computerChoice.toUpperCase()}.`
             computerScore++
         }
         else if (playerChoice == "scissor" && computerChoice == "rock") {
-            console.log("You loose!")
+            winnerElement.textContent = `LOST! You choose: ${playerChoice.toUpperCase()}. Computer choose: ${computerChoice.toUpperCase()}.`
             computerScore++
         }
         else if (playerChoice == "scissor" && computerChoice == "paper") {
-            console.log("You won!")
+            winnerElement.textContent = `WON! You choose: ${playerChoice.toUpperCase()}. Computer choose: ${computerChoice.toUpperCase()}.`
             playerScore++
         }
         else if (playerChoice == "paper" && computerChoice == "scissor") {
-            console.log("You loose!")
+            winnerElement.textContent = `LOST! You choose: ${playerChoice.toUpperCase()}. Computer choose: ${computerChoice.toUpperCase()}.`
             computerScore++
         }
         else if (playerChoice == "paper" && computerChoice == "rock") {
-            console.log("You won!")
+            winnerElement.textContent = `WON! You choose: ${playerChoice.toUpperCase()}. Computer choose: ${computerChoice.toUpperCase()}.`
             playerScore++
         }
     }
@@ -113,4 +116,12 @@ function playRound(playerChoice, computerChoice) {
     //Update scores
     playerScoreElement.textContent = `Your Score: ${playerScore}`;
     computerScoreElement.textContent = `Computer Score: ${computerScore}`;
+
+    //Game winning logic
+    if (playerScore > 5) {
+        winnerElement.textContent = "You got a Score of 5 and WON! Reload the page to start again.";
+    };
+    if (computerScore > 5) {
+        winnerElement.textContent = "Computer got a Score of 5 and you LOST! Reload the page to start again.";
+    };
 }
